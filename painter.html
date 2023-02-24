@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <title>
+    Assignment-6
+ </title>
+<body>
+
+<h2>Painter entry Pranathi Patlolla</h2>
+
+
+
+<form>
+    <label for="Painter">The hidden painter name </label>
+    <input type ="password" id="Painter" name="Painter" value="Monet"> <br>
+    <br>
+    <label for="guessPainter">Guess the Painter </label>
+    <input type ="text" id="guessPainter" name="guessPainter" autofocus> <br>
+    <br>
+    <input type="button" onclick="checkPainter()" value="Check the guess">
+</form>
+<p id="result">Count of good and oops guess </p>
+
+<script> 
+var good= 0;
+var oops=0;
+
+function checkPainter (){
+    console.log("Getting form values")
+    PainterName = document.getElementById("Painter").value
+    guesspaintername = document.getElementById("guessPainter").value
+    confirmed = confirm("Are these the values? "+PainterName+" and "+guesspaintername)
+    out = document.getElementById("result")
+    if(PainterName == guesspaintername){
+        alert("You got it right")
+        good=good +1
+        out.innerHTML = "Correct Answer: "+good +" "+ "Wrong Answer: " +oops;
+        } else {
+        alert("Sorry")
+        oops =opps+1
+        out.innerHTML = "Correct Answer: " +good + " "+ "Wrong Answer: " + oops;
+    }
+}
+</script>
+
+</body>
+</html> 
