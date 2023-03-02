@@ -42,25 +42,25 @@ function checkPainter (){
     }
 }
 var useImage=1;
-  function selectImage(){
-      switch (useImage){
-         case 1:
-           document.getElementById("Image").src="pampas_grass.jpeg";
-           useImage++;
-            break;
-        case 2:
-           document.getElementById("Image").src="Lagerstroemia.jpg";
-           useImage++;
-           break;
-        case 3:
-            document.getElementById("Image").src="Orchid.jpeg"; 
-            useImage=1
-            break;
+function selectImage(){
+switch (useImage){
+    case 1:
+    document.getElementById("Img").src="pampas_grass.jpeg";
+    useImage++;
+    break;
+    case 2:
+    document.getElementById("Img").src="Lagerstroemia.jpg";
+    useImage++;
+    break;
+    case 3:
+    document.getElementById("Img").src="Orchid.jpeg"; 
+    useImage=1
+    break;
     }
 }
 </script>
 <div class="container">
-    <img id="Image"src="Orchid.jpeg" width="100" height="100" onClick=selectImage()><br>
+    <img id="Img"src="Orchid.jpeg" width="100" height="100" onClick=selectImage()><br>
 
 </div>
 
