@@ -16,9 +16,13 @@
     <label for="guessPainterPerson">Guess the Painter </label>
     <input type ="text" id="guessPainterPerson" name="guessPainterPerson" autofocus> <br>
     <br>
-    <input type="button" onclick="checkPainter()" value="Check the guess">
+    <input type="button" onclick="checkPainter()" id="button" value="Check the guess">
 </form>
 <p id="result">Count of good and oops guesses </p>
+<div class="container">
+    <img id="Img"src="Orchid.jpeg" width="100" height="100" onClick=selectImage()><br>
+</div>
+
 <script> 
 var good= 0;
 var oops=0;
@@ -32,7 +36,14 @@ function checkPainter (){
         alert("You got it right")
         good=good +1
         out.innerHTML = "Correct Answer count: "+good +" "+ "Wrong Answer count: " +oops;
-        } else {
+        } 
+        else if(oops>=10){
+
+document.getElementById("button").onclick=clickAlert();
+out.innerHTML = "Correct Answer count: "+good +" "+ "Wrong Answer count: " +oops;
+}
+        
+            else {
         alert("Sorry")
         oops =oops+1
         out.innerHTML = "Correct Answer count: " +good + " "+ "Wrong Answer count: " + oops;
@@ -41,6 +52,10 @@ function checkPainter (){
         
     }
 }
+function clickAlert(){
+    alert("Sorry, ran out of guesses");
+}
+
 var useImage=1;
 function selectImage(){
 switch (useImage){
@@ -59,10 +74,32 @@ switch (useImage){
     }
 }
 </script>
-<div class="container">
-    <img id="Img"src="Orchid.jpeg" width="100" height="100" onClick=selectImage()><br>
-
-</div>
 
 </body>
 </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
